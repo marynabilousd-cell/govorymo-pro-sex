@@ -54,25 +54,17 @@
   }
 
   /* ---- Вибір формату участі підставляється у форму ----
-     Кнопки тарифів та лекції ведуть на #join і одразу обирають потрібний варіант. */
+     Кнопки тарифів ведуть на #join і одразу обирають потрібний варіант. */
   var interest = document.getElementById('interest');
-  var presets = {
-    'btn-tripwire': 'lecture',
-    'btn-join': 'club'
-  };
 
   document.addEventListener('click', function (e) {
     var link = e.target.closest ? e.target.closest('a[href="#join"]') : null;
     if (!link || !interest) return;
 
-    var value = presets[link.id];
-    if (!value) {
-      var text = (link.textContent || '').toLowerCase();
-      if (text.indexOf('vip') !== -1) value = 'vip';
-      else if (text.indexOf('лекц') !== -1) value = 'lecture';
-      else value = 'club';
-    }
-    interest.value = value;
+    var text = (link.textContent || '').toLowerCase();
+    if (text.indexOf('vip') !== -1) interest.value = 'vip';
+    else if (text.indexOf('лекц') !== -1) interest.value = 'lecture';
+    else interest.value = 'club';
   });
 
   /* ---- Форма заявки ----
