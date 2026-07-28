@@ -88,12 +88,17 @@
           <!-- === РЕКЛАМНЕ ВІДЕО ПРОДУКТУ === -->
           <div class="hero__visual">
             <div class="video">
+              <!-- Фонове відео: без звуку, без панелі керування,
+                   автозапуск і безкінечний цикл. -->
               <video class="video__frame"
                      src="assets/video_preview.mp4"
                      title="Рекламне відео клубу"
-                     controls
+                     autoplay
+                     muted
+                     loop
                      playsinline
-                     preload="metadata">
+                     disablepictureinpicture
+                     preload="auto">
                 Ваш браузер не підтримує відтворення відео.
                 <a href="assets/video_preview.mp4">Завантажити відео</a>.
               </video>
