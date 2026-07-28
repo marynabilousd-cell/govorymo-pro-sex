@@ -302,6 +302,26 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 .solution__text { margin: 0; font-size: 1.08rem; }
 .solution__text strong { color: var(--crimson); font-family: var(--font-display); font-size: 1.2rem; letter-spacing: .5px; }
 
+/* ---------- Лід-магніт після блоку «Про клуб» ---------- */
+.guide {
+  padding: 88px 0;
+  background:
+    radial-gradient(700px 320px at 50% 0%, rgba(109, 16, 48, .5), transparent 70%),
+    var(--bg);
+}
+.guide__inner { text-align: center; }
+.guide__question {
+  max-width: 60ch;
+  margin: 0 auto 34px;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+.guide__title {
+  margin: 0 auto 32px;
+  font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+  color: var(--gold);
+}
+
 /* ---------- БЛОК 3: Наповнення ---------- */
 .feature {
   padding: 30px 28px;
