@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Симулятор бізнесу — навчальна гра для підприємців</title>
-  <meta name="description" content="Симулятор бізнесу: приймай рішення, керуй ресурсами та перевіряй стратегії без ризику для реальних грошей.">
+  <title>ГОВОРИМО ПРО СЕКС — клуб сексуальності і свободи</title>
+  <meta name="description" content="Закритий клуб та безпечний простір для дорослих розмов про найважливіше. Поверніть собі свободу, самоцінність та якість життя через чесний діалог.">
+  <meta name="rating" content="adult">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Симулятор бізнесу">
-  <meta property="og:description" content="Навчальна гра-симулятор: перевір свої бізнес-рішення без ризику.">
+  <meta property="og:title" content="ГОВОРИМО ПРО СЕКС. КЛУБ СЕКСУАЛЬНОСТІ І СВОБОДИ">
+  <meta property="og:description" content="Безпечний простір для дорослих розмов про найважливіше. Сексуальність — енергія, що творить.">
   <meta property="og:image" content="assets/img/og-image.svg">
+  <meta property="og:locale" content="uk_UA">
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -21,16 +26,16 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a class="logo" href="#hero">
-        <span class="logo__mark">SB</span>
-        <span class="logo__text">Симулятор бізнесу</span>
+        <span class="logo__mark">ГПС</span>
+        <span class="logo__text">Говоримо про секс</span>
       </a>
 
       <nav class="nav" id="nav">
-        <a href="#features">Можливості</a>
-        <a href="#how">Як це працює</a>
-        <a href="#pricing">Тарифи</a>
-        <a href="#faq">FAQ</a>
-        <a href="#cta" class="btn btn--sm btn--primary">Почати</a>
+        <a href="#about">Про клуб</a>
+        <a href="#club">Що всередині</a>
+        <a href="#proof">Відгуки</a>
+        <a href="#pricing">Участь</a>
+        <a href="#join" class="btn btn--sm btn--primary">Вступити до клубу</a>
       </nav>
 
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
@@ -40,217 +45,329 @@
   </header>
 
   <main>
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="hero">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="badge">Навчальна платформа</p>
-          <h1 class="hero__title">Керуй бізнесом.<br>Помиляйся безкоштовно.</h1>
-          <p class="hero__text">
-            Симулятор, у якому ти приймаєш реальні управлінські рішення —
-            від закупівель до найму — і одразу бачиш їхній вплив на прибуток.
-          </p>
-          <div class="hero__actions">
-            <a href="#cta" class="btn btn--primary">Спробувати безкоштовно</a>
-            <a href="#how" class="btn btn--ghost">Як це працює</a>
-          </div>
-          <ul class="hero__stats">
-            <li><strong>12</strong><span>сценаріїв</span></li>
-            <li><strong>30 хв</strong><span>один раунд</span></li>
-            <li><strong>2–20</strong><span>гравців</span></li>
-          </ul>
-        </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <div class="card-stack">
-            <div class="mini-card">
-              <span class="mini-card__label">Виручка</span>
-              <span class="mini-card__value">₴ 1 240 000</span>
-              <span class="mini-card__delta mini-card__delta--up">+18%</span>
-            </div>
-            <div class="mini-card">
-              <span class="mini-card__label">Маржа</span>
-              <span class="mini-card__value">34%</span>
-              <span class="mini-card__delta mini-card__delta--up">+3 п.п.</span>
-            </div>
-            <div class="mini-card">
-              <span class="mini-card__label">Витрати</span>
-              <span class="mini-card__value">₴ 818 400</span>
-              <span class="mini-card__delta mini-card__delta--down">−6%</span>
+    <!-- ======================================================
+         БЛОК 1 — ШАПКА З ОФЕРОМ  (AIDA: Attention / Увага)
+         ====================================================== -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero__inner">
+
+          <div class="hero__content">
+            <h1 class="hero__title">ГОВОРИМО ПРО СЕКС</h1>
+            <p class="hero__subtitle">Клуб сексуальності і свободи</p>
+
+            <p class="hero__text">
+              Закритий клуб та безпечний простір для дорослих розмов про найважливіше.
+            </p>
+
+            <!-- === КНОПКА — РЕЄСТРАЦІЯ У ГУГЛ-ФОРМІ === -->
+            <div class="hero__actions">
+              <a href="https://forms.gle/x4iukEetxtsE9hgS9"
+                 class="btn btn--primary btn--lg"
+                 id="btn-join-top"
+                 target="_blank" rel="noopener">Приєднатись до клубу</a>
             </div>
           </div>
+
+          <!-- === РЕКЛАМНЕ ВІДЕО ПРОДУКТУ === -->
+          <div class="hero__visual">
+            <div class="video">
+              <!--
+                ▼ ЗАМІНІТЬ НА СВОЄ ВІДЕО ▼
+                YouTube:  <iframe class="video__frame" src="https://www.youtube.com/embed/ВАШ_ID" title="Рекламне відео клубу" allowfullscreen></iframe>
+                Файл:     <video class="video__frame" src="assets/video/promo.mp4" poster="assets/img/promo-poster.jpg" controls></video>
+              -->
+              <div class="video__placeholder" role="img" aria-label="Місце для рекламного відео">
+                <span class="video__play" aria-hidden="true">▶</span>
+                <span class="video__label">Рекламне відео клубу</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============ FEATURES ============ -->
-    <section class="section" id="features">
+    <!-- ======================================================
+         БЛОК 2 — ПРО ПРОЕКТ ТА ПРОБЛЕМАТИКУ  (AIDA: Interest)
+         ====================================================== -->
+    <section class="section section--alt" id="about">
+      <div class="container container--narrow">
+        <h2 class="section__title">Чому ми мовчимо про те, що дає найбільше енергії?</h2>
+
+        <p class="lead-text">
+          Більшість із нас виросли в культурі, де говорити про секс та свої бажання — це табу.
+          Ми ховаємо справжніх себе, боїмося засудження, відчуваємо сором навіть у стосунках
+          із найближчими. Це блокує не лише наше тіло, але й гроші, проявленість
+          та життєву енергію.
+        </p>
+
+        <div class="solution">
+          <p class="solution__text">
+            <strong>«ГОВОРИМО ПРО СЕКС»</strong> — це спільнота, де ми формуємо нову культуру
+            сексуальності. Тут немає засудження. Тільки прийняття, практики для звільнення
+            від страхів та чесний діалог.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         БЛОК 3 — ПРОДУКТ ТА НАПОВНЕННЯ  (AIDA: Desire / Бажання)
+         ====================================================== -->
+    <section class="section" id="club">
       <div class="container">
-        <h2 class="section__title">Що всередині</h2>
-        <p class="section__lead">Усе, щоб відпрацювати навички управління на практиці.</p>
+        <h2 class="section__title">Що чекає на вас всередині клубу?</h2>
+        <p class="section__lead">
+          Ставши резидентом нашого закритого клубу, ви отримуєте річну програму
+          глибокої трансформації.
+        </p>
 
         <div class="grid grid--3">
           <article class="feature">
-            <div class="feature__icon">📊</div>
-            <h3>Реальна економіка</h3>
-            <p>Модель враховує попит, сезонність, конкурентів і собівартість — цифри не з голови.</p>
+            <div class="feature__icon">✨</div>
+            <h3>Тематичні місяці</h3>
+            <p>Щомісяця ми глибоко розбираємо одну тему: тіло, бажання, стосунки, сором,
+               гроші, проявленість, межі, близькість.</p>
           </article>
-          <article class="feature">
-            <div class="feature__icon">⚡</div>
-            <h3>Швидкі раунди</h3>
-            <p>Один ігровий квартал — до 30 хвилин. За заняття встигаєш прожити цілий рік.</p>
-          </article>
+
           <article class="feature">
             <div class="feature__icon">🤝</div>
-            <h3>Командна гра</h3>
-            <p>Від 2 до 20 учасників. Кожен веде свою компанію на спільному ринку.</p>
+            <h3>Живі зустрічі</h3>
+            <p>2 рази на місяць (офлайн / онлайн) для відвертих розмов та лекцій.</p>
           </article>
+
           <article class="feature">
-            <div class="feature__icon">🧭</div>
-            <h3>Розбір рішень</h3>
-            <p>Після раунду — звіт: що спрацювало, що ні та які альтернативи були кращими.</p>
+            <div class="feature__icon">🧘‍♀️</div>
+            <h3>Практики та вправи</h3>
+            <p>Дієві інструменти для роботи з тілом та емоціями — між зустрічами й у житті.</p>
           </article>
+
           <article class="feature">
-            <div class="feature__icon">🎛️</div>
-            <h3>Гнучкі сценарії</h3>
-            <p>Криза, вихід на новий ринок, демпінг конкурента — обирай складність під групу.</p>
+            <div class="feature__icon">💬</div>
+            <h3>Закритий чат підтримки</h3>
+            <p>Простір, де вас вислухають 24/7 — без порад із інтернету й без осуду.</p>
           </article>
+
           <article class="feature">
-            <div class="feature__icon">📱</div>
-            <h3>Працює у браузері</h3>
-            <p>Без встановлення. Ноутбук, планшет чи телефон — достатньо посилання.</p>
+            <div class="feature__icon">🤫</div>
+            <h3>Спеціальні події</h3>
+            <p>Закриті заходи тільки для резидентів клубу — гості, практики, зустрічі.</p>
           </article>
+
+          <article class="feature feature--accent">
+            <div class="feature__icon">🔒</div>
+            <h3>Коло, якому можна довіряти</h3>
+            <p>Усе, що сказано в клубі, залишається в клубі. Це головне правило резидентства.</p>
+          </article>
+        </div>
+
+        <!-- === КНОПКА 2 — ТОВАР-ПАСТКА === -->
+        <div class="tripwire">
+          <p class="tripwire__text">
+            Ще не готові до річного членства? Почніть із легкого кроку.
+          </p>
+          <a href="#join" class="btn btn--gold btn--lg" id="btn-tripwire">
+            Хочу спробувати! Купити лекцію «Сексуальність без сорому» за 500 грн
+          </a>
+          <p class="btn__note">Онлайн або офлайн · Вартість зараховується у членство клубу</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ HOW IT WORKS ============ -->
-    <section class="section section--alt" id="how">
+    <!-- ======================================================
+         БЛОК 4 — ДОКАЗИ ТА АТМОСФЕРА  (AIDA: Trust / Довіра)
+         ====================================================== -->
+    <section class="section section--alt" id="proof">
       <div class="container">
-        <h2 class="section__title">Як це працює</h2>
-        <p class="section__lead">Чотири кроки від реєстрації до першого прибутку.</p>
 
-        <ol class="steps">
-          <li class="step">
-            <span class="step__num">1</span>
-            <h3>Обери сценарій</h3>
-            <p>Виробництво, роздріб чи сервіс — під ціль навчання.</p>
-          </li>
-          <li class="step">
-            <span class="step__num">2</span>
-            <h3>Признач ролі</h3>
-            <p>Директор, фінансист, маркетолог — або грай соло за всіх.</p>
-          </li>
-          <li class="step">
-            <span class="step__num">3</span>
-            <h3>Прийми рішення</h3>
-            <p>Ціни, обсяги, реклама, персонал — і закрий квартал.</p>
-          </li>
-          <li class="step">
-            <span class="step__num">4</span>
-            <h3>Розбери результат</h3>
-            <p>Звіт, рейтинг компаній і висновки для наступного раунду.</p>
-          </li>
-        </ol>
+        <!-- ---- ФОТОГАЛЕРЕЯ ---- -->
+        <h2 class="section__title">Наш простір</h2>
+        <p class="section__lead">Як проходять наші зустрічі.</p>
+
+        <!--
+          ▼ ЗАМІНІТЬ ПЛЕЙСХОЛДЕРИ НА ФОТО ▼
+          <figure class="gallery__item"><img src="assets/img/gallery/01.jpg" alt="Зустріч клубу"></figure>
+        -->
+        <div class="gallery">
+          <figure class="gallery__item gallery__item--wide"><span>Коло на зустрічі</span></figure>
+          <figure class="gallery__item"><span>Простір, свічки</span></figure>
+          <figure class="gallery__item"><span>Момент практики</span></figure>
+          <figure class="gallery__item"><span>Розмова після</span></figure>
+          <figure class="gallery__item gallery__item--wide"><span>Спільне фото групи</span></figure>
+        </div>
+        <p class="gallery__note">Фото з наших зустрічей. Обличчя — тільки за згодою учасників.</p>
+
+        <!-- ---- ВІДГУКИ ---- -->
+        <h2 class="section__title section__title--spaced">Історії наших резидентів</h2>
+
+        <div class="grid grid--2">
+          <blockquote class="review">
+            <p>
+              «Завдяки клубу я нарешті перестала соромитися свого тіла і змогла відверто
+              поговорити з чоловіком про свої фантазії. Наші стосунки перейшли на новий рівень.»
+            </p>
+            <footer class="review__author">
+              <span class="review__avatar" aria-hidden="true">О</span>
+              <span>Олена, 34 <em>ім'я змінено за проханням резидентки</em></span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review">
+            <p>
+              «Безпечний простір, де я вперше в житті не відчувала засудження.
+              Лекції просто відкривають очі на те, як тісно пов'язана сексуальність і гроші!»
+            </p>
+            <footer class="review__author">
+              <span class="review__avatar" aria-hidden="true">М</span>
+              <span>Марія, 29 <em>резидентка клубу</em></span>
+            </footer>
+          </blockquote>
+        </div>
       </div>
     </section>
 
-    <!-- ============ PRICING ============ -->
+    <!-- ======================================================
+         БЛОК 5 — ТАРИФИ ТА РЕЄСТРАЦІЯ  (AIDA: Action / Дія)
+         ====================================================== -->
     <section class="section" id="pricing">
       <div class="container">
-        <h2 class="section__title">Тарифи</h2>
-        <p class="section__lead">Почни безкоштовно, розширюй за потреби.</p>
+        <h2 class="section__title">Оберіть свій формат участі у клубі</h2>
+        <p class="section__lead">Річна програма. Кількість місць у групі обмежена.</p>
 
-        <div class="grid grid--3">
-          <article class="plan">
-            <h3 class="plan__name">Демо</h3>
-            <p class="plan__price">0 ₴</p>
-            <ul class="plan__list">
-              <li>1 сценарій</li>
-              <li>До 4 гравців</li>
-              <li>Базовий звіт</li>
-            </ul>
-            <a href="#cta" class="btn btn--ghost btn--full">Спробувати</a>
-          </article>
+        <div class="grid grid--2 grid--plans">
 
+          <!-- Основний продукт -->
           <article class="plan plan--featured">
-            <span class="plan__tag">Популярний</span>
-            <h3 class="plan__name">Група</h3>
-            <p class="plan__price">1 900 ₴<span>/міс</span></p>
+            <span class="plan__tag">Основний формат</span>
+            <h3 class="plan__name">Резидент клубу</h3>
+            <p class="plan__price">ХХ ХХХ ₴<span>/рік</span></p>
             <ul class="plan__list">
-              <li>Усі сценарії</li>
-              <li>До 20 гравців</li>
-              <li>Повна аналітика</li>
-              <li>Підтримка тренера</li>
+              <li>Річне членство в клубі</li>
+              <li>2 живі зустрічі щомісяця</li>
+              <li>Практики та вправи</li>
+              <li>Закритий чат підтримки</li>
+              <li>8 тематичних місяців</li>
+              <li>Спеціальні події для резидентів</li>
             </ul>
-            <a href="#cta" class="btn btn--primary btn--full">Обрати</a>
+            <a href="#join" class="btn btn--primary btn--full">Вступити до клубу</a>
           </article>
 
-          <article class="plan">
-            <h3 class="plan__name">Заклад освіти</h3>
-            <p class="plan__price">Індивідуально</p>
+          <!-- Мультиплікатор прибутку -->
+          <article class="plan plan--vip">
+            <span class="plan__tag plan__tag--gold">Максимальна глибина</span>
+            <h3 class="plan__name">VIP та Наставництво</h3>
+            <p class="plan__price">ХХ ХХХ ₴<span>/рік</span></p>
             <ul class="plan__list">
-              <li>Необмежені групи</li>
-              <li>Власні сценарії</li>
-              <li>Журнал успішності</li>
+              <li>Усе, що входить у «Резидент клубу»</li>
+              <li>Індивідуальні консультації засновників</li>
+              <li>Пріоритетний доступ до виїзних ретритів</li>
+              <li>Тематичні інтенсиви за спеціальними умовами</li>
             </ul>
-            <a href="#cta" class="btn btn--ghost btn--full">Зв'язатися</a>
+            <a href="#join" class="btn btn--gold btn--full">Обрати VIP-формат</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ FAQ ============ -->
-    <section class="section section--alt" id="faq">
-      <div class="container container--narrow">
-        <h2 class="section__title">Питання й відповіді</h2>
-
-        <div class="faq">
-          <details class="faq__item">
-            <summary>Чи потрібні знання економіки?</summary>
-            <p>Ні. Базовий сценарій пояснює всі показники по ходу гри. Складніші режими вимикаються.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Скільки триває одна сесія?</summary>
-            <p>Раунд — до 30 хвилин. Повна гра з розбором зазвичай займає 2–3 години.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Чи можна грати онлайн?</summary>
-            <p>Так. Симулятор працює у браузері, учасники можуть бути в різних містах.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Що потрібно для старту?</summary>
-            <p>Пристрій з браузером та інтернет. Нічого встановлювати не треба.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CTA ============ -->
-    <section class="cta" id="cta">
+    <!-- ---- РЕЄСТРАЦІЯ + КНОПКА 3 (ГОЛОВНА ЦІЛЬОВА ДІЯ) ---- -->
+    <section class="cta" id="join">
       <div class="container container--narrow cta__inner">
-        <h2>Готові спробувати?</h2>
-        <p>Залиште пошту — надішлемо доступ до демо-сценарію.</p>
+        <h2>Зробіть перший крок — решту пройдемо разом</h2>
+        <p>Залиште контакт: ми зв'яжемося протягом 24 годин, відповімо на всі питання
+           й розкажемо про найближчий набір. Без тиску та продажів.</p>
 
-        <form class="form" id="signup-form" novalidate>
-          <label class="visually-hidden" for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required>
-          <button type="submit" class="btn btn--primary">Отримати доступ</button>
+        <form class="form form--full" id="signup-form" novalidate>
+          <div class="form__row">
+            <label class="visually-hidden" for="name">Ім'я</label>
+            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+
+            <label class="visually-hidden" for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+
+          <div class="form__row">
+            <label class="visually-hidden" for="contact">Телефон або Telegram</label>
+            <input type="text" id="contact" name="contact" placeholder="Телефон або @telegram">
+
+            <label class="visually-hidden" for="interest">Що вас цікавить</label>
+            <select id="interest" name="interest">
+              <option value="club">Членство в клубі</option>
+              <option value="lecture">Лекція «Сексуальність без сорому»</option>
+              <option value="vip">VIP та наставництво</option>
+              <option value="guide">Безкоштовний гайд</option>
+            </select>
+          </div>
+
+          <!-- === КНОПКА 3 — ГОЛОВНА ЦІЛЬОВА ДІЯ === -->
+          <button type="submit" class="btn btn--primary btn--lg btn--full" id="btn-join">
+            Вступити до клубу / Приєднатися до спільноти
+          </button>
         </form>
+
         <p class="form__note" id="form-note" role="status"></p>
+        <p class="cta__fineprint">Заявка ні до чого не зобов'язує. Ваші дані не передаються третім особам.</p>
+      </div>
+    </section>
+
+    <!-- ---- ЛІД-МАГНІТ (якір для Кнопки 1) ---- -->
+    <section class="lead" id="lead">
+      <div class="container container--narrow lead__inner">
+        <p class="lead__badge">Безкоштовно</p>
+        <h2>7 причин, чому ви не можете відкрито говорити про секс (і як це змінити)</h2>
+        <p>За 15 хвилин ви зрозумієте, яка саме причина — ваша. І що з нею робити вже цього тижня.</p>
+
+        <div class="lead__actions">
+          <!-- ▼ ЗАМІНІТЬ # НА ПОСИЛАННЯ НА TELEGRAM-БОТА / КАНАЛ ▼ -->
+          <a href="#" class="btn btn--primary" id="btn-lead-tg">Забрати гайд у Telegram</a>
+          <!-- ▼ ЗАМІНІТЬ # НА ПОСИЛАННЯ НА VIBER ▼ -->
+          <a href="#" class="btn btn--ghost" id="btn-lead-viber">Забрати гайд у Viber</a>
+        </div>
+        <p class="btn__note">Жодного спаму — тільки корисне й тільки по темі.</p>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- ======================================================
+       БЛОК 6 — ПІДВАЛ ТА ГАРАНТІЇ  (AIDA: Satisfaction)
+       ====================================================== -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <p>&copy; <span id="year"></span> Симулятор бізнесу</p>
-      <nav class="footer__nav">
-        <a href="#features">Можливості</a>
-        <a href="#pricing">Тарифи</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+    <div class="container">
+
+      <div class="guarantee">
+        <div class="guarantee__icon" aria-hidden="true">🔒</div>
+        <div>
+          <h3>Ваша конфіденційність — наш пріоритет</h3>
+          <p>
+            Ми ретельно слідкуємо за екологічністю спільноти. Усе, що обговорюється
+            в клубі, залишається виключно між нами.
+          </p>
+        </div>
+      </div>
+
+      <p class="farewell">
+        Зробіть крок назустріч собі справжній(ому).<br>
+        Ви заслуговуєте на життя без сорому та повне задоволення.
+      </p>
+
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <p class="footer__name">ГОВОРИМО ПРО СЕКС</p>
+          <p class="footer__tagline">Клуб сексуальності і свободи · Сексуальність — енергія, що творить.</p>
+        </div>
+
+        <nav class="footer__nav">
+          <!-- ▼ ЗАМІНІТЬ # НА ВАШІ КОНТАКТИ ▼ -->
+          <a href="#">Instagram</a>
+          <a href="#">Telegram</a>
+          <a href="mailto:hello@example.com">Email</a>
+          <a href="#">Публічна оферта</a>
+          <a href="#">Політика конфіденційності</a>
+        </nav>
+      </div>
+
+      <p class="footer__legal">18+ · &copy; <span id="year"></span> Клуб «Говоримо про секс». Усі права захищено.</p>
     </div>
   </footer>
 
