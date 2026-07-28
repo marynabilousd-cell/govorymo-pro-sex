@@ -375,9 +375,51 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   display: block;
 }
 
-/* ---------- БЛОК 4: Відгуки ---------- */
+/* ---------- БЛОК 4: Відгуки (карусель) ---------- */
+.slider { position: relative; }
+
+/* Доріжка: горизонтальна прокрутка з прилипанням карток */
+.reviews {
+  display: flex;
+  align-items: flex-start;   /* висота кожної картки — за її текстом */
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 4px 2px 6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.reviews::-webkit-scrollbar { display: none; }
+.reviews:focus-visible { outline: 2px solid var(--crimson); outline-offset: 4px; }
+
+/* Кнопки гортання */
+.slider__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 48px; height: 48px;
+  padding: 0 0 4px;
+  transform: translateY(-50%);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--gold);
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+}
+.slider__nav:hover { background: var(--accent); border-color: var(--accent); color: #f3e7e9; }
+.slider__nav--prev { left: -22px; }
+.slider__nav--next { right: -22px; }
+
 .review {
   position: relative;
+  flex: 0 0 calc((100% - 44px) / 3);
+  scroll-snap-align: start;
   padding: 38px 32px 30px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -393,9 +435,10 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   color: rgba(238, 201, 161, .4);
 }
 .review p {
-  font-size: 1.05rem;
-  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.7;
   margin-bottom: 22px;
+  color: var(--text);
 }
 .review__author {
   display: flex;
@@ -599,6 +642,9 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   .hero__inner { grid-template-columns: 1fr; gap: 44px; }
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
   .btn--lg { max-width: none; width: 100%; }
+  .review { flex-basis: calc((100% - 22px) / 2); }
+  .slider__nav--prev { left: -10px; }
+  .slider__nav--next { right: -10px; }
 }
 
 @media (max-width: 760px) {
@@ -606,6 +652,10 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   .section__title--spaced { margin-top: 60px; }
   .hero { padding: 56px 0 66px; }
   .grid--3, .grid--2 { grid-template-columns: 1fr; }
+  .review { flex-basis: 100%; padding: 34px 24px 26px; }
+  .slider__nav { width: 42px; height: 42px; font-size: 1.6rem; }
+  .slider__nav--prev { left: -6px; }
+  .slider__nav--next { right: -6px; }
   .gallery { grid-template-columns: 1fr; gap: 14px; }
   .form__row { flex-direction: column; }
   .hero__stats { gap: 24px; }

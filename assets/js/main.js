@@ -34,8 +34,50 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  /* ---- Карусель відгуків ----
+     Гортання стрілками, свайпом і колесом миші. По колу:
+     з останньої картки переходимо на першу і навпаки. */
+  var track = document.getElementById('reviews-track');
+  var slider = document.getElementById('reviews-slider');
+
+  if (track && slider) {
+    var prevBtn = slider.querySelector('.slider__nav--prev');
+    var nextBtn = slider.querySelector('.slider__nav--next');
+
+    var step = function () {
+      var card = track.querySelector('.review');
+      if (!card) return track.clientWidth;
+      var gap = parseFloat(getComputedStyle(track).columnGap || '0') || 0;
+      return card.getBoundingClientRect().width + gap;
+    };
+
+    var maxScroll = function () {
+      return track.scrollWidth - track.clientWidth;
+    };
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        if (track.scrollLeft >= maxScroll() - 2) track.scrollTo({ left: 0 });
+        else track.scrollBy({ left: step() });
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        if (track.scrollLeft <= 2) track.scrollTo({ left: maxScroll() });
+        else track.scrollBy({ left: -step() });
+      });
+    }
+
+    /* Стрілки на клавіатурі, коли доріжка у фокусі */
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); nextBtn.click(); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); prevBtn.click(); }
+    });
+  }
+
   /* ---- Поява блоків при скролі ---- */
-  var targets = document.querySelectorAll('.feature, .plan, .review, .gallery__item, .solution, .guarantee');
+  var targets = document.querySelectorAll('.feature, .plan, .gallery__item, .solution, .guarantee');
 
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries) {
