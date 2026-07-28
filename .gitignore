@@ -15,3 +15,10 @@ desktop.ini
 node_modules/
 dist/
 *.log
+
+# Оригінали фото (важкі PNG, по ~6 МБ).
+# На сайті працюють стиснені копії з assets/img/gallery/
+/assets/img/kolo zustrich.png
+/assets/img/na pryrodi.png
+/assets/img/practyka.png
+/assets/img/nash prostir.png
