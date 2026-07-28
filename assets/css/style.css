@@ -312,13 +312,20 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 .feature h3 { font-size: 1.28rem; }
 .feature p { color: var(--text-muted); margin: 0; font-size: .97rem; }
 
+/* Виділений блок відкритої лекції: контур і підсвітка бордово-малиновим */
 .tripwire {
+  position: relative;
   margin-top: 56px;
-  padding: 40px 30px;
+  padding: 44px 32px;
   text-align: center;
-  border: 1px dashed rgba(238, 201, 161, .42);
+  border: 1px solid var(--crimson);
   border-radius: var(--radius);
-  background: rgba(238, 201, 161, .05);
+  background:
+    radial-gradient(620px 260px at 50% 0%, rgba(184, 56, 92, .16), transparent 72%),
+    var(--surface);
+  box-shadow:
+    0 0 0 4px rgba(184, 56, 92, .10),
+    0 24px 60px -30px rgba(184, 56, 92, .85);
 }
 /* Надзаголовок — той самий серифний шрифт, що й у заголовків секцій,
    але менший: між заголовком секції (2.8rem) та основним текстом (1.05rem) */
@@ -351,14 +358,11 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   color: var(--text-muted);
 }
 
-/* ---------- БЛОК 4: Галерея ---------- */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
+/* ---------- БЛОК 4: Галерея (карусель) ---------- */
 .gallery__item {
   position: relative;
+  flex: 0 0 calc((100% - 44px) / 3);
+  scroll-snap-align: start;
   margin: 0;
   aspect-ratio: 3 / 2;
   overflow: hidden;
@@ -375,13 +379,13 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   display: block;
 }
 
-/* ---------- БЛОК 4: Відгуки (карусель) ---------- */
+/* ---------- Карусель (спільна для відгуків і фото) ---------- */
 .slider { position: relative; }
 
 /* Доріжка: горизонтальна прокрутка з прилипанням карток */
-.reviews {
+.slider__track {
   display: flex;
-  align-items: flex-start;   /* висота кожної картки — за її текстом */
+  align-items: flex-start;
   gap: 22px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -390,8 +394,8 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.reviews::-webkit-scrollbar { display: none; }
-.reviews:focus-visible { outline: 2px solid var(--crimson); outline-offset: 4px; }
+.slider__track::-webkit-scrollbar { display: none; }
+.slider__track:focus-visible { outline: 2px solid var(--crimson); outline-offset: 4px; }
 
 /* Кнопки гортання */
 .slider__nav {
@@ -418,7 +422,10 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 
 .review {
   position: relative;
+  display: flex;
+  flex-direction: column;
   flex: 0 0 calc((100% - 44px) / 3);
+  min-height: 300px;
   scroll-snap-align: start;
   padding: 38px 32px 30px;
   background: var(--surface);
@@ -434,16 +441,42 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   line-height: 1;
   color: rgba(238, 201, 161, .4);
 }
-.review p {
+/* Текст обрізається до 5 рядків; повний відкривається кнопкою */
+.review__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   color: var(--text);
 }
+.review.is-open .review__text {
+  display: block;
+  overflow: visible;
+}
+.review__more {
+  align-self: flex-start;
+  margin-bottom: 18px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--crimson);
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color .18s ease;
+}
+.review__more:hover { color: var(--gold); }
 .review__author {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: auto;
   font-weight: 600;
 }
 .review__author em {
@@ -498,6 +531,11 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   margin-bottom: 24px;
 }
 .plan__price span { font-size: .95rem; font-weight: 400; color: var(--text-muted); font-family: var(--font); }
+.plan__price-note {
+  margin: -18px 0 24px;
+  color: var(--text-muted);
+  font-size: .95rem;
+}
 .plan__list { margin-bottom: 30px; display: grid; gap: 11px; }
 .plan__list li { position: relative; padding-left: 26px; color: var(--text-muted); font-size: .96rem; }
 .plan__list li::before {
@@ -517,7 +555,8 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 .cta__inner { text-align: center; }
 .cta h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--gold); }
 .cta p { color: var(--text-muted); }
-.cta__fineprint { font-size: .84rem; margin-top: 16px; }
+.cta__actions { margin: 30px 0 0; }
+.cta__fineprint { font-size: .84rem; margin-top: 18px; }
 
 .form { max-width: 620px; margin: 30px auto 0; }
 .form__row { display: flex; gap: 12px; margin-bottom: 12px; }
@@ -542,37 +581,6 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 .form__note { min-height: 1.4em; margin: 14px 0 0; font-size: .92rem; color: var(--text-muted); }
 .form__note.is-error { color: #ef8b8b; }
 .form__note.is-ok { color: var(--gold); }
-
-/* ---------- Лід-магніт ---------- */
-.lead { padding: 84px 0; }
-.lead__inner {
-  text-align: center;
-  padding: 46px 34px;
-  border: 1px solid rgba(238, 201, 161, .35);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-.lead__badge {
-  display: inline-block;
-  margin-bottom: 16px;
-  padding: 5px 14px;
-  border-radius: 999px;
-  background: rgba(238, 201, 161, .14);
-  color: var(--gold);
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .6px;
-  text-transform: uppercase;
-}
-.lead h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); color: var(--gold); }
-.lead p { color: var(--text-muted); }
-.lead__actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 26px;
-}
 
 /* ---------- БЛОК 6: Підвал ---------- */
 .footer {
@@ -642,7 +650,8 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   .hero__inner { grid-template-columns: 1fr; gap: 44px; }
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
   .btn--lg { max-width: none; width: 100%; }
-  .review { flex-basis: calc((100% - 22px) / 2); }
+  .review,
+  .gallery__item { flex-basis: calc((100% - 22px) / 2); }
   .slider__nav--prev { left: -10px; }
   .slider__nav--next { right: -10px; }
 }
@@ -653,10 +662,10 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   .hero { padding: 56px 0 66px; }
   .grid--3, .grid--2 { grid-template-columns: 1fr; }
   .review { flex-basis: 100%; padding: 34px 24px 26px; }
+  .gallery__item { flex-basis: 100%; }
   .slider__nav { width: 42px; height: 42px; font-size: 1.6rem; }
   .slider__nav--prev { left: -6px; }
   .slider__nav--next { right: -6px; }
-  .gallery { grid-template-columns: 1fr; gap: 14px; }
   .form__row { flex-direction: column; }
   .hero__stats { gap: 24px; }
   .hero__stats span { max-width: none; }

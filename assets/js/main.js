@@ -34,18 +34,18 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ---- Карусель відгуків ----
+  /* ---- Каруселі (відгуки та фотогалерея) ----
      Гортання стрілками, свайпом і колесом миші. По колу:
      з останньої картки переходимо на першу і навпаки. */
-  var track = document.getElementById('reviews-track');
-  var slider = document.getElementById('reviews-slider');
+  Array.prototype.forEach.call(document.querySelectorAll('.slider'), function (slider) {
+    var track = slider.querySelector('.slider__track');
+    if (!track) return;
 
-  if (track && slider) {
     var prevBtn = slider.querySelector('.slider__nav--prev');
     var nextBtn = slider.querySelector('.slider__nav--next');
 
     var step = function () {
-      var card = track.querySelector('.review');
+      var card = track.firstElementChild;
       if (!card) return track.clientWidth;
       var gap = parseFloat(getComputedStyle(track).columnGap || '0') || 0;
       return card.getBoundingClientRect().width + gap;
@@ -55,29 +55,61 @@
       return track.scrollWidth - track.clientWidth;
     };
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        if (track.scrollLeft >= maxScroll() - 2) track.scrollTo({ left: 0 });
-        else track.scrollBy({ left: step() });
-      });
-    }
+    var next = function () {
+      if (track.scrollLeft >= maxScroll() - 2) track.scrollTo({ left: 0 });
+      else track.scrollBy({ left: step() });
+    };
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        if (track.scrollLeft <= 2) track.scrollTo({ left: maxScroll() });
-        else track.scrollBy({ left: -step() });
-      });
-    }
+    var prev = function () {
+      if (track.scrollLeft <= 2) track.scrollTo({ left: maxScroll() });
+      else track.scrollBy({ left: -step() });
+    };
+
+    if (nextBtn) nextBtn.addEventListener('click', next);
+    if (prevBtn) prevBtn.addEventListener('click', prev);
 
     /* Стрілки на клавіатурі, коли доріжка у фокусі */
     track.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { e.preventDefault(); nextBtn.click(); }
-      if (e.key === 'ArrowLeft')  { e.preventDefault(); prevBtn.click(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); prev(); }
     });
-  }
+
+    /* Якщо всі картки вміщаються — стрілки не потрібні */
+    var toggleNav = function () {
+      var needed = track.scrollWidth > track.clientWidth + 4;
+      if (prevBtn) prevBtn.hidden = !needed;
+      if (nextBtn) nextBtn.hidden = !needed;
+    };
+    toggleNav();
+    window.addEventListener('resize', toggleNav);
+  });
+
+  /* ---- «Читати більше» у відгуках ----
+     Текст обрізаний до 5 рядків (CSS). Кнопка з'являється лише там,
+     де текст справді не вмістився. */
+  Array.prototype.forEach.call(document.querySelectorAll('.review'), function (review) {
+    var text = review.querySelector('.review__text');
+    var author = review.querySelector('.review__author');
+    if (!text || !author) return;
+
+    if (text.scrollHeight <= text.clientHeight + 2) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'review__more';
+    btn.textContent = 'Читати більше';
+    btn.setAttribute('aria-expanded', 'false');
+    review.insertBefore(btn, author);
+
+    btn.addEventListener('click', function () {
+      var open = review.classList.toggle('is-open');
+      btn.textContent = open ? 'Згорнути' : 'Читати більше';
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
 
   /* ---- Поява блоків при скролі ---- */
-  var targets = document.querySelectorAll('.feature, .plan, .gallery__item, .solution, .guarantee');
+  var targets = document.querySelectorAll('.feature, .plan, .solution, .guarantee');
 
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries) {
@@ -95,58 +127,4 @@
     });
   }
 
-  /* ---- Вибір формату участі підставляється у форму ----
-     Кнопки тарифів ведуть на #join і одразу обирають потрібний варіант. */
-  var interest = document.getElementById('interest');
-
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest ? e.target.closest('a[href="#join"]') : null;
-    if (!link || !interest) return;
-
-    var text = (link.textContent || '').toLowerCase();
-    if (text.indexOf('vip') !== -1) interest.value = 'vip';
-    else if (text.indexOf('лекц') !== -1) interest.value = 'lecture';
-    else interest.value = 'club';
-  });
-
-  /* ---- Форма заявки ----
-     GitHub Pages — статичний хостинг, тому справжня відправка неможлива.
-     Підключіть сюди Formspree / Google Forms / Telegram-бота / власний API. */
-  var form = document.getElementById('signup-form');
-  var note = document.getElementById('form-note');
-
-  if (form && note) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var nameInput = form.querySelector('input[name="name"]');
-      var emailInput = form.querySelector('input[name="email"]');
-
-      var nameOk = nameInput.value.trim().length >= 2;
-      var emailValue = emailInput.value.trim();
-      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailValue);
-
-      note.classList.remove('is-error', 'is-ok');
-      nameInput.classList.toggle('is-invalid', !nameOk);
-      emailInput.classList.toggle('is-invalid', !emailOk);
-
-      if (!nameOk) {
-        note.textContent = 'Вкажіть, будь ласка, ваше ім’я.';
-        note.classList.add('is-error');
-        nameInput.focus();
-        return;
-      }
-
-      if (!emailOk) {
-        note.textContent = 'Введіть коректну email-адресу.';
-        note.classList.add('is-error');
-        emailInput.focus();
-        return;
-      }
-
-      note.textContent = 'Дякуємо! Ми зв’яжемося з вами протягом 24 годин на ' + emailValue;
-      note.classList.add('is-ok');
-      form.reset();
-    });
-  }
 })();

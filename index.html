@@ -242,7 +242,14 @@
         <h2 class="section__title">Наш простір</h2>
         <p class="section__lead">Як проходять наші зустрічі.</p>
 
-        <div class="gallery">
+        <div class="slider">
+          <button class="slider__nav slider__nav--prev" type="button"
+                  aria-label="Попереднє фото">‹</button>
+          <button class="slider__nav slider__nav--next" type="button"
+                  aria-label="Наступне фото">›</button>
+
+          <div class="gallery slider__track" tabindex="0"
+               role="region" aria-label="Фото зустрічей клубу">
           <figure class="gallery__item">
             <img src="assets/img/gallery/kolo-zustrich.jpg"
                  alt="Учасники клубу сидять у колі на зустрічі" loading="lazy">
@@ -259,6 +266,7 @@
             <img src="assets/img/gallery/nash-prostir.jpg"
                  alt="Простір клубу: свічки, оксамит, атмосфера зустрічі" loading="lazy">
           </figure>
+          </div>
         </div>
 
         <!-- ---- ВІДГУКИ ---- -->
@@ -273,7 +281,7 @@
           <div class="reviews slider__track" id="reviews-track" tabindex="0"
                role="region" aria-label="Відгуки резидентів клубу">
           <blockquote class="review">
-            <p>
+            <p class="review__text">
               «Завдяки клубу я нарешті перестала соромитися свого тіла і змогла відверто
               поговорити з чоловіком про свої фантазії. Наші стосунки перейшли на новий рівень.»
             </p>
@@ -284,7 +292,7 @@
           </blockquote>
 
           <blockquote class="review">
-            <p>
+            <p class="review__text">
               «Безпечний простір, де я вперше в житті не відчувала засудження.
               Лекції просто відкривають очі на те, як тісно пов'язана сексуальність і гроші!»
             </p>
@@ -295,7 +303,7 @@
           </blockquote>
 
           <blockquote class="review">
-            <p>
+            <p class="review__text">
               «Я довго навіть не могла вимовити слово „секс“ уголос. З чоловіком ми жили разом
               багато років, але про інтимне практично не говорили. Мені завжди здавалося,
               що мої бажання неважливі або що мене неправильно зрозуміють. На першу зустріч
@@ -310,7 +318,7 @@
           </blockquote>
 
           <blockquote class="review">
-            <p>
+            <p class="review__text">
               «Спочатку я був упевнений, що це більше жіноча тема. Але зрозумів, що й сам роками
               уникав будь-яких розмов про секс. Якщо щось не влаштовувало — просто мовчав.
               У клубі я вперше почув, що відвертість не робить чоловіка слабким. Навпаки,
@@ -324,7 +332,7 @@
           </blockquote>
 
           <blockquote class="review">
-            <p>
+            <p class="review__text">
               «Я прийшла із сильним соромом. Будь-яка розмова про сексуальність викликала
               напругу. Було відчуття, що зі мною щось не так. Поступово я зрозуміла, скільки
               установок несла ще з дитинства. Найцінніше було почути інших людей і відчути,
@@ -338,7 +346,7 @@
           </blockquote>
 
           <blockquote class="review">
-            <p>
+            <p class="review__text">
               «Для мене цей клуб став місцем, де можна чесно говорити без страху бути висміяним.
               Я зрозумів, що багато конфліктів у стосунках виникали не через секс, а через
               відсутність відкритого діалогу. Після зустрічей ми з дружиною почали більше
@@ -351,7 +359,7 @@
           </blockquote>
 
           <blockquote class="review">
-            <p>
+            <p class="review__text">
               «Я прийшла після розлучення. Була впевнена, що більше ніколи не зможу побудувати
               близькі стосунки. Цей клуб допоміг мені повернути контакт із собою. Я перестала
               соромитися своєї сексуальності й почала сприймати її як природну частину себе.
@@ -381,7 +389,8 @@
           <article class="plan plan--featured">
             <span class="plan__tag">Основний формат</span>
             <h3 class="plan__name">Резидент клубу</h3>
-            <p class="plan__price">ХХ ХХХ ₴<span>/рік</span></p>
+            <p class="plan__price">800 ₴<span>/міс</span></p>
+            <p class="plan__price-note">При оплаті за рік — 7 900 ₴</p>
             <ul class="plan__list">
               <li>Річне членство в клубі</li>
               <li>2 живі зустрічі щомісяця</li>
@@ -390,21 +399,24 @@
               <li>8 тематичних місяців</li>
               <li>Спеціальні події для резидентів</li>
             </ul>
-            <a href="#join" class="btn btn--primary btn--full">Вступити до клубу</a>
+            <a href="https://forms.gle/rzdpKya9J3Q1Vmqf6" class="btn btn--primary btn--full"
+               target="_blank" rel="noopener">Приєднатись до клубу</a>
           </article>
 
           <!-- Мультиплікатор прибутку -->
           <article class="plan plan--vip">
             <span class="plan__tag plan__tag--gold">Максимальна глибина</span>
-            <h3 class="plan__name">VIP та Наставництво</h3>
-            <p class="plan__price">ХХ ХХХ ₴<span>/рік</span></p>
+            <h3 class="plan__name">VIP Резидент клубу</h3>
+            <p class="plan__price">1 600 ₴<span>/міс</span></p>
+            <p class="plan__price-note">При оплаті на рік — 18 900 ₴</p>
             <ul class="plan__list">
               <li>Усе, що входить у «Резидент клубу»</li>
-              <li>Індивідуальні консультації засновників</li>
+              <li>Щомісяця індивідуальна консультація засновниці</li>
               <li>Пріоритетний доступ до виїзних ретритів</li>
               <li>Тематичні інтенсиви за спеціальними умовами</li>
             </ul>
-            <a href="#join" class="btn btn--gold btn--full">Обрати VIP-формат</a>
+            <a href="https://forms.gle/rzdpKya9J3Q1Vmqf6" class="btn btn--gold btn--full"
+               target="_blank" rel="noopener">Обрати VIP-формат</a>
           </article>
         </div>
       </div>
@@ -414,59 +426,20 @@
     <section class="cta" id="join">
       <div class="container container--narrow cta__inner">
         <h2>Зробіть перший крок — решту пройдемо разом</h2>
-        <p>Залиште контакт: ми зв'яжемося протягом 24 годин, відповімо на всі питання
+        <p>Залиште заявку у формі: ми зв'яжемося протягом 24 годин, відповімо на всі питання
            й розкажемо про найближчий набір. Без тиску та продажів.</p>
 
-        <form class="form form--full" id="signup-form" novalidate>
-          <div class="form__row">
-            <label class="visually-hidden" for="name">Ім'я</label>
-            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+        <div class="cta__actions">
+          <a href="https://forms.gle/rzdpKya9J3Q1Vmqf6"
+             class="btn btn--primary btn--lg"
+             id="btn-join"
+             target="_blank" rel="noopener">Приєднатись до клубу</a>
+        </div>
 
-            <label class="visually-hidden" for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-          </div>
-
-          <div class="form__row">
-            <label class="visually-hidden" for="contact">Телефон або Telegram</label>
-            <input type="text" id="contact" name="contact" placeholder="Телефон або @telegram">
-
-            <label class="visually-hidden" for="interest">Що вас цікавить</label>
-            <select id="interest" name="interest">
-              <option value="club">Членство в клубі</option>
-              <option value="lecture">Лекція «Сексуальність без сорому»</option>
-              <option value="vip">VIP та наставництво</option>
-              <option value="guide">Безкоштовний гайд</option>
-            </select>
-          </div>
-
-          <!-- === КНОПКА 3 — ГОЛОВНА ЦІЛЬОВА ДІЯ === -->
-          <button type="submit" class="btn btn--primary btn--lg btn--full" id="btn-join">
-            Вступити до клубу / Приєднатися до спільноти
-          </button>
-        </form>
-
-        <p class="form__note" id="form-note" role="status"></p>
         <p class="cta__fineprint">Заявка ні до чого не зобов'язує. Ваші дані не передаються третім особам.</p>
       </div>
     </section>
 
-    <!-- ---- ЛІД-МАГНІТ (якір для Кнопки 1) ---- -->
-    <section class="lead" id="lead">
-      <div class="container container--narrow lead__inner">
-        <p class="lead__badge">Безкоштовно</p>
-        <h2>7 причин, чому ви не можете відкрито говорити про секс (і як це змінити)</h2>
-        <p>За 15 хвилин ви зрозумієте, яка саме причина — ваша. І що з нею робити вже цього тижня.</p>
-
-        <div class="lead__actions">
-          <!-- ▼ ЗАМІНІТЬ # НА ПОСИЛАННЯ НА TELEGRAM-БОТА / КАНАЛ ▼ -->
-          <a href="https://t.me/+1I5s27iO6vs5ZmQy" class="btn btn--primary" id="btn-lead-tg"
-             target="_blank" rel="noopener">Забрати гайд у Telegram</a>
-          <!-- ▼ ЗАМІНІТЬ # НА ПОСИЛАННЯ НА VIBER ▼ -->
-          <a href="#" class="btn btn--ghost" id="btn-lead-viber">Забрати гайд у Viber</a>
-        </div>
-        <p class="btn__note">Жодного спаму — тільки корисне й тільки по темі.</p>
-      </div>
-    </section>
   </main>
 
   <!-- ======================================================
@@ -497,14 +470,15 @@
           <p class="footer__tagline">Клуб сексуальності і свободи · Сексуальність — енергія, що творить.</p>
         </div>
 
+        <!-- Контакти й документи повернемо, коли будуть готові посилання:
         <nav class="footer__nav">
-          <!-- ▼ ЗАМІНІТЬ # НА ВАШІ КОНТАКТИ ▼ -->
           <a href="#">Instagram</a>
           <a href="#">Telegram</a>
           <a href="mailto:hello@example.com">Email</a>
           <a href="#">Публічна оферта</a>
           <a href="#">Політика конфіденційності</a>
         </nav>
+        -->
       </div>
 
       <p class="footer__legal">18+ · &copy; <span id="year"></span> Клуб «Говоримо про секс». Усі права захищено.</p>
