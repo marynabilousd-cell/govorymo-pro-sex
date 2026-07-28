@@ -87,15 +87,15 @@
           <!-- === РЕКЛАМНЕ ВІДЕО ПРОДУКТУ === -->
           <div class="hero__visual">
             <div class="video">
-              <!--
-                ▼ ЗАМІНІТЬ НА СВОЄ ВІДЕО ▼
-                YouTube:  <iframe class="video__frame" src="https://www.youtube.com/embed/ВАШ_ID" title="Рекламне відео клубу" allowfullscreen></iframe>
-                Файл:     <video class="video__frame" src="assets/video/promo.mp4" poster="assets/img/promo-poster.jpg" controls></video>
-              -->
-              <div class="video__placeholder" role="img" aria-label="Місце для рекламного відео">
-                <span class="video__play" aria-hidden="true">▶</span>
-                <span class="video__label">Рекламне відео клубу</span>
-              </div>
+              <video class="video__frame"
+                     src="assets/video_preview.mp4"
+                     title="Рекламне відео клубу"
+                     controls
+                     playsinline
+                     preload="metadata">
+                Ваш браузер не підтримує відтворення відео.
+                <a href="assets/video_preview.mp4">Завантажити відео</a>.
+              </video>
             </div>
           </div>
 
@@ -141,8 +141,10 @@
           Безкоштовний гайд: 7 причин, чому складно говорити про секс (і як це змінити)
         </h2>
 
-        <!-- ▼ ЗАМІНІТЬ # НА ПОСИЛАННЯ НА TELEGRAM-КАНАЛ ▼ -->
-        <a href="#" class="btn btn--primary btn--lg" id="btn-guide">Отримати гайд</a>
+        <a href="https://t.me/+1I5s27iO6vs5ZmQy"
+           class="btn btn--primary btn--lg"
+           id="btn-guide"
+           target="_blank" rel="noopener">Отримати гайд</a>
       </div>
     </section>
 
@@ -353,7 +355,8 @@
 
         <div class="lead__actions">
           <!-- ▼ ЗАМІНІТЬ # НА ПОСИЛАННЯ НА TELEGRAM-БОТА / КАНАЛ ▼ -->
-          <a href="#" class="btn btn--primary" id="btn-lead-tg">Забрати гайд у Telegram</a>
+          <a href="https://t.me/+1I5s27iO6vs5ZmQy" class="btn btn--primary" id="btn-lead-tg"
+             target="_blank" rel="noopener">Забрати гайд у Telegram</a>
           <!-- ▼ ЗАМІНІТЬ # НА ПОСИЛАННЯ НА VIBER ▼ -->
           <a href="#" class="btn btn--ghost" id="btn-lead-viber">Забрати гайд у Viber</a>
         </div>
