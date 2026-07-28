@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Симулятор бізнесу — навчальна гра для підприємців</title>
+  <meta name="description" content="Симулятор бізнесу: приймай рішення, керуй ресурсами та перевіряй стратегії без ризику для реальних грошей.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Симулятор бізнесу">
+  <meta property="og:description" content="Навчальна гра-симулятор: перевір свої бізнес-рішення без ризику.">
+  <meta property="og:image" content="assets/img/og-image.svg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#hero">
+        <span class="logo__mark">SB</span>
+        <span class="logo__text">Симулятор бізнесу</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#features">Можливості</a>
+        <a href="#how">Як це працює</a>
+        <a href="#pricing">Тарифи</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta" class="btn btn--sm btn--primary">Почати</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="badge">Навчальна платформа</p>
+          <h1 class="hero__title">Керуй бізнесом.<br>Помиляйся безкоштовно.</h1>
+          <p class="hero__text">
+            Симулятор, у якому ти приймаєш реальні управлінські рішення —
+            від закупівель до найму — і одразу бачиш їхній вплив на прибуток.
+          </p>
+          <div class="hero__actions">
+            <a href="#cta" class="btn btn--primary">Спробувати безкоштовно</a>
+            <a href="#how" class="btn btn--ghost">Як це працює</a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>12</strong><span>сценаріїв</span></li>
+            <li><strong>30 хв</strong><span>один раунд</span></li>
+            <li><strong>2–20</strong><span>гравців</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="card-stack">
+            <div class="mini-card">
+              <span class="mini-card__label">Виручка</span>
+              <span class="mini-card__value">₴ 1 240 000</span>
+              <span class="mini-card__delta mini-card__delta--up">+18%</span>
+            </div>
+            <div class="mini-card">
+              <span class="mini-card__label">Маржа</span>
+              <span class="mini-card__value">34%</span>
+              <span class="mini-card__delta mini-card__delta--up">+3 п.п.</span>
+            </div>
+            <div class="mini-card">
+              <span class="mini-card__label">Витрати</span>
+              <span class="mini-card__value">₴ 818 400</span>
+              <span class="mini-card__delta mini-card__delta--down">−6%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="section__title">Що всередині</h2>
+        <p class="section__lead">Усе, щоб відпрацювати навички управління на практиці.</p>
+
+        <div class="grid grid--3">
+          <article class="feature">
+            <div class="feature__icon">📊</div>
+            <h3>Реальна економіка</h3>
+            <p>Модель враховує попит, сезонність, конкурентів і собівартість — цифри не з голови.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">⚡</div>
+            <h3>Швидкі раунди</h3>
+            <p>Один ігровий квартал — до 30 хвилин. За заняття встигаєш прожити цілий рік.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">🤝</div>
+            <h3>Командна гра</h3>
+            <p>Від 2 до 20 учасників. Кожен веде свою компанію на спільному ринку.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">🧭</div>
+            <h3>Розбір рішень</h3>
+            <p>Після раунду — звіт: що спрацювало, що ні та які альтернативи були кращими.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">🎛️</div>
+            <h3>Гнучкі сценарії</h3>
+            <p>Криза, вихід на новий ринок, демпінг конкурента — обирай складність під групу.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">📱</div>
+            <h3>Працює у браузері</h3>
+            <p>Без встановлення. Ноутбук, планшет чи телефон — достатньо посилання.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <h2 class="section__title">Як це працює</h2>
+        <p class="section__lead">Чотири кроки від реєстрації до першого прибутку.</p>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">1</span>
+            <h3>Обери сценарій</h3>
+            <p>Виробництво, роздріб чи сервіс — під ціль навчання.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <h3>Признач ролі</h3>
+            <p>Директор, фінансист, маркетолог — або грай соло за всіх.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <h3>Прийми рішення</h3>
+            <p>Ціни, обсяги, реклама, персонал — і закрий квартал.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">4</span>
+            <h3>Розбери результат</h3>
+            <p>Звіт, рейтинг компаній і висновки для наступного раунду.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <h2 class="section__title">Тарифи</h2>
+        <p class="section__lead">Почни безкоштовно, розширюй за потреби.</p>
+
+        <div class="grid grid--3">
+          <article class="plan">
+            <h3 class="plan__name">Демо</h3>
+            <p class="plan__price">0 ₴</p>
+            <ul class="plan__list">
+              <li>1 сценарій</li>
+              <li>До 4 гравців</li>
+              <li>Базовий звіт</li>
+            </ul>
+            <a href="#cta" class="btn btn--ghost btn--full">Спробувати</a>
+          </article>
+
+          <article class="plan plan--featured">
+            <span class="plan__tag">Популярний</span>
+            <h3 class="plan__name">Група</h3>
+            <p class="plan__price">1 900 ₴<span>/міс</span></p>
+            <ul class="plan__list">
+              <li>Усі сценарії</li>
+              <li>До 20 гравців</li>
+              <li>Повна аналітика</li>
+              <li>Підтримка тренера</li>
+            </ul>
+            <a href="#cta" class="btn btn--primary btn--full">Обрати</a>
+          </article>
+
+          <article class="plan">
+            <h3 class="plan__name">Заклад освіти</h3>
+            <p class="plan__price">Індивідуально</p>
+            <ul class="plan__list">
+              <li>Необмежені групи</li>
+              <li>Власні сценарії</li>
+              <li>Журнал успішності</li>
+            </ul>
+            <a href="#cta" class="btn btn--ghost btn--full">Зв'язатися</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--alt" id="faq">
+      <div class="container container--narrow">
+        <h2 class="section__title">Питання й відповіді</h2>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Чи потрібні знання економіки?</summary>
+            <p>Ні. Базовий сценарій пояснює всі показники по ходу гри. Складніші режими вимикаються.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Скільки триває одна сесія?</summary>
+            <p>Раунд — до 30 хвилин. Повна гра з розбором зазвичай займає 2–3 години.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Чи можна грати онлайн?</summary>
+            <p>Так. Симулятор працює у браузері, учасники можуть бути в різних містах.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Що потрібно для старту?</summary>
+            <p>Пристрій з браузером та інтернет. Нічого встановлювати не треба.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="cta">
+      <div class="container container--narrow cta__inner">
+        <h2>Готові спробувати?</h2>
+        <p>Залиште пошту — надішлемо доступ до демо-сценарію.</p>
+
+        <form class="form" id="signup-form" novalidate>
+          <label class="visually-hidden" for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          <button type="submit" class="btn btn--primary">Отримати доступ</button>
+        </form>
+        <p class="form__note" id="form-note" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Симулятор бізнесу</p>
+      <nav class="footer__nav">
+        <a href="#features">Можливості</a>
+        <a href="#pricing">Тарифи</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
