@@ -17,6 +17,7 @@
   --accent:        #6d1030;   /* бордо — кнопки */
   --accent-strong: #8a1740;   /* бордо при наведенні */
   --crimson:       #b8385c;   /* малиновий — назва клубу, акценти */
+  --crimson-soft:  #e58aa5;   /* світліший рожевий — для дрібного тексту на темному */
   --gold:          #eec9a1;   /* кремово-персиковий — заголовки */
   --gold-strong:   #e0b385;
 
@@ -233,8 +234,10 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   margin: 0 0 22px;
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 2.2vw, 1.6rem);
-  color: var(--crimson);
-  letter-spacing: 1px;
+  font-weight: 600;
+  color: var(--crimson-soft);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
 }
 .hero__text { color: var(--text-muted); font-size: 1.12rem; max-width: 34ch; }
 
