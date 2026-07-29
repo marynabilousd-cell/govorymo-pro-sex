@@ -327,17 +327,41 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
     0 0 0 4px rgba(184, 56, 92, .10),
     0 24px 60px -30px rgba(184, 56, 92, .85);
 }
-/* Надзаголовок — той самий серифний шрифт, що й у заголовків секцій,
-   але менший: між заголовком секції (2.8rem) та основним текстом (1.05rem) */
-.tripwire__eyebrow {
-  margin: 0 0 18px;
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: .3px;
+/* Рівень 1 — мітка формату: найдрібніша, гротеск, розрядка */
+.tripwire__label {
+  margin: 0 0 12px;
+  font-family: var(--font);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--crimson);
+}
+
+/* Рівень 2 — заголовок блоку: серифний, найбільший текст усередині */
+.tripwire__title {
+  margin: 0 0 20px;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  line-height: 1.2;
   color: var(--gold);
 }
+
+/* Рівень 3 — дата: окремим рядком, у бордовій плашці */
+.tripwire__date {
+  display: inline-block;
+  margin: 0 0 24px;
+  padding: 7px 22px;
+  border: 1px solid var(--crimson);
+  border-radius: 999px;
+  background: rgba(184, 56, 92, .16);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Рівень 4 — пояснення: звичайний текст */
 .tripwire__intro {
   max-width: 62ch;
   margin: 0 auto;
@@ -345,15 +369,28 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   font-size: 1.05rem;
   text-wrap: pretty;
 }
+
+/* Рівень 5 — ціна: сума виділена, дедлайн і наступна ціна тихіші */
 .tripwire__price {
-  margin: 30px 0 22px;
+  margin: 28px 0 4px;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+.tripwire__price strong {
   color: var(--gold);
-  font-size: 1.1rem;
+  font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: .3px;
 }
+.tripwire__price-later {
+  margin: 0 0 26px;
+  color: var(--text-muted);
+  font-size: .9rem;
+  font-weight: 400;
+}
 .tripwire__note {
-  margin: 12px 0 0;
+  margin: 14px 0 0;
   font-size: .85rem;
   color: var(--text-muted);
 }
