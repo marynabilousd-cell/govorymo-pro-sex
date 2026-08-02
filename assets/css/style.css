@@ -296,9 +296,15 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   color: var(--text);
 }
 .guide__title {
-  margin: 0 auto 32px;
+  margin: 0 auto 20px;
   font-size: clamp(1.5rem, 3.4vw, 2.2rem);
   color: var(--gold);
+}
+/* Інструкція над кнопкою — той самий стиль, що й «Тільки 12 учасників у групі» */
+.guide__note {
+  margin: 0 auto 26px;
+  font-size: .85rem;
+  color: var(--text-muted);
 }
 
 /* ---------- БЛОК 3: Наповнення ---------- */
@@ -386,14 +392,9 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   font-weight: 700;
   letter-spacing: .3px;
 }
-.tripwire__price-later {
-  margin: 0 0 26px;
-  color: var(--text-muted);
-  font-size: .9rem;
-  font-weight: 400;
-}
-.tripwire__note {
-  margin: 14px 0 0;
+/* Інструкція над кнопкою */
+.tripwire__how {
+  margin: 18px 0 20px;
   font-size: .85rem;
   color: var(--text-muted);
 }
@@ -583,7 +584,13 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   position: absolute; left: 0;
   color: var(--gold);
 }
-.plan .btn { margin-top: auto; }
+/* Інструкція над кнопкою тарифу */
+.plan__how {
+  margin: auto 0 12px;
+  font-size: .85rem;
+  color: var(--text-muted);
+}
+.plan .btn { margin-top: 0; }
 
 /* ---------- Реєстрація (CTA) ---------- */
 .cta {
@@ -596,7 +603,6 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 .cta h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--gold); }
 .cta p { color: var(--text-muted); }
 .cta__actions { margin: 30px 0 0; }
-.cta__fineprint { font-size: .84rem; margin-top: 18px; }
 
 .form { max-width: 620px; margin: 30px auto 0; }
 .form__row { display: flex; gap: 12px; margin-bottom: 12px; }
